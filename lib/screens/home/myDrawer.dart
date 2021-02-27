@@ -74,10 +74,16 @@ class MyDrawer extends StatelessWidget {
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  _buildListTile(Icon(Icons.home_filled), 'Home', () {
+                  _buildListTile(Icon(Icons.home_filled), 'Home', () {}),
+                  _buildListTile(
+                      Icon(ThemeProvider.themeOf(context).id == 'dark'
+                          ? Icons.wb_sunny_outlined
+                          : Icons.nightlight_round),
+                      ThemeProvider.themeOf(context).id == 'dark'
+                          ? 'Light Theme'
+                          : 'Dark Theme', () {
                     ThemeProvider.controllerOf(context).nextTheme();
                   }),
-                  _buildListTile(Icon(Icons.ac_unit), 'Actual', () {}),
                   _buildListTile(Icon(Icons.search), 'Search', () {}),
                   _buildListTile(
                       Icon(Icons.notifications), 'Notifications', () {}),
@@ -88,12 +94,12 @@ class MyDrawer extends StatelessWidget {
                     Icon(Icons.account_circle_outlined),
                     'Profile',
                     () async {
-                      final prefs = await SharedPreferences.getInstance();
-                      String message = await AuthRepositoryApi()
-                          .logout(prefs.getString('auth_token'), context);
-                      Scaffold.of(context).showSnackBar(SnackBar(
-                        content: Text(message),
-                      ));
+                      //   final prefs = await SharedPreferences.getInstance();
+                      //   String message = await AuthRepositoryApi()
+                      //       .logout(prefs.getString('auth_token'), context);
+                      //   Scaffold.of(context).showSnackBar(SnackBar(
+                      //     content: Text(message),
+                      //   ));
                     },
                   ),
                   _buildListTile(Icon(Icons.more_horiz), 'More', () {}),
