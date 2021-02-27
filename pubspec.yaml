@@ -1,0 +1,42 @@
+name: social
+description: A new Flutter project.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  theme_provider: ^0.4.0+1
+  http: ^0.12.2
+  bloc: ^6.1.1
+  flutter_bloc: ^6.1.1
+  shared_preferences: ^0.5.12+4
+  flutter_icons: ^1.1.0
+  dio: ^3.0.10
+  url_launcher: ^5.7.10
+  flutter_svg:
+
+
+  cupertino_icons: ^1.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_launcher_icons: "^0.8.0"
+
+flutter_icons:
+  image_path: "assets/images/olivso.png"
+  android: "launcher_icon"
+  ios: true
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/images/olivso.png
+    - assets/images/avatar.png
+    - assets/images/olivx_logo.png
